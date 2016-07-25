@@ -6,6 +6,16 @@
 </p>
 
 <p>
+  <strong>Urls:</strong>
+  <ul>
+    <li><%= @keyword.urls.select{|u| u.isTopAd}.size %> Ads on top</li>
+    <li><%= @keyword.urls.select{|u| u.isRightAd}.size %> Ads on the right</li>
+    <li><%= @keyword.urls.reject{|u| u.isRightAd || u.isTopAd}.size %> Non-ads links</li>
+    <li><%= @keyword.urls.size %> total links</li>
+  </ul>
+</p>
+
+<p>
   <strong>Cache:</strong>
   <%= @keyword.cache.size %> characters
 </p>
