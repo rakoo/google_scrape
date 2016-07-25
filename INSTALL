@@ -1,0 +1,14 @@
+Commands taken from https://wiki.archlinux.org/index.php/PostgreSQL
+
+* Install pg
+* Create user google_scrape
+
+  postgres$ createuser --interactive
+
+* Create db google_scrape
+
+  postgres$ createdb google_scrape
+
+* Create db google_scrape_dev
+
+  postgres$ createdb google_scrape

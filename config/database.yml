@@ -17,10 +17,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  database: google_scrape
+  username: google_scrape
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: google_scrape_dev
