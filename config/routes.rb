@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  resources :keywords
+  root 'keywords#index'
 end

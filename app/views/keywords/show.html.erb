@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @keyword.keyword %>
+</p>
+
+<p>
+  <strong>Cache:</strong>
+  <%= @keyword.cache.size %> characters
+</p>
+
+<p>
+  <strong>Processed at:</strong>
+  <%= @keyword.processed_at %>
+</p>
+
+<%= link_to 'Edit', edit_keyword_path(@keyword) %> |
+<%= link_to 'Back', keywords_path %>

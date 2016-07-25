@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  cache: MyText
+  processed_at: MyString
+
+two:
+  keyword: MyString
+  cache: MyText
+  processed_at: MyString

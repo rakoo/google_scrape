@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Keywords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Cache</th>
+      <th>Processed at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @keywords.each do |keyword| %>
+      <tr>
+        <td><%= keyword.keyword %></td>
+        <td><%= keyword.cache.size %> characters</td>
+        <td><%= keyword.processed_at %></td>
+        <td><%= link_to 'Show', keyword %></td>
+        <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Keyword', new_keyword_path %>
