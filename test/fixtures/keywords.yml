@@ -4,8 +4,12 @@ one:
   keyword: MyString
   cache: MyText
   processed_at: MyString
+  total_results: 
+  search_time: 1.5
 
 two:
   keyword: MyString
   cache: MyText
   processed_at: MyString
+  total_results: 
+  search_time: 1.5

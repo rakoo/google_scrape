@@ -4,6 +4,8 @@ class CreateKeywords < ActiveRecord::Migration[5.0]
       t.string :keyword
       t.text :cache
       t.string :processed_at
+      t.int :total_results
+      t.float :search_time
 
       t.timestamps
     end

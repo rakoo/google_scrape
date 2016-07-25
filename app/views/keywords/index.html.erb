@@ -8,6 +8,8 @@
       <th>Keyword</th>
       <th>Cache</th>
       <th>Processed at</th>
+      <th>Total results</th>
+      <th>Search time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +18,10 @@
     <% @keywords.each do |keyword| %>
       <tr>
         <td><%= keyword.keyword %></td>
-        <td><%= keyword.cache.size %> characters</td>
+        <td><%= keyword.cache %></td>
         <td><%= keyword.processed_at %></td>
+        <td><%= keyword.total_results %></td>
+        <td><%= keyword.search_time %></td>
         <td><%= link_to 'Show', keyword %></td>
         <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -15,5 +15,15 @@
   <%= @keyword.processed_at %>
 </p>
 
+<p>
+  <strong>Total results:</strong>
+  <%= @keyword.total_results %>
+</p>
+
+<p>
+  <strong>Search time:</strong>
+  <%= @keyword.search_time %>
+</p>
+
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back', keywords_path %>
