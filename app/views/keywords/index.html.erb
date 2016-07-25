@@ -18,7 +18,7 @@
     <% @keywords.each do |keyword| %>
       <tr>
         <td><%= keyword.keyword %></td>
-        <td><%= keyword.cache %></td>
+        <td><%= keyword.cache.size %> characters</td>
         <td><%= keyword.processed_at %></td>
         <td><%= keyword.total_results %></td>
         <td><%= keyword.search_time %></td>

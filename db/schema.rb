@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20160725172749) do
     t.string   "keyword"
     t.text     "cache"
     t.string   "processed_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "total_results"
+    t.float    "search_time"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
