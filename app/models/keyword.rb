@@ -1,3 +1,4 @@
 class Keyword < ApplicationRecord
-  validates :keyword
+  has_many :urls
+  validates :keyword, presence: true
 end

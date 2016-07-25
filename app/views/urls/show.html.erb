@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @url.keyword %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @url.url %>
+</p>
+
+<p>
+  <strong>Istopad:</strong>
+  <%= @url.isTopAd %>
+</p>
+
+<p>
+  <strong>Isrightad:</strong>
+  <%= @url.isRightAd %>
+</p>
+
+<%= link_to 'Edit', edit_url_path(@url) %> |
+<%= link_to 'Back', urls_path %>
