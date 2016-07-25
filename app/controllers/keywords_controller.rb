@@ -27,6 +27,8 @@ class KeywordsController < ApplicationController
   def create
     @keyword = Keyword.new(keyword_params)
 
+    fetch(@keyword)
+
     respond_to do |format|
       if @keyword.save
         format.html { redirect_to @keyword, notice: 'Keyword was successfully created.' }
@@ -70,6 +72,21 @@ class KeywordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def keyword_params
-      params.require(:keyword).permit(:keyword, :cache, :processed_at)
+      params.require(:keyword).permit(:keyword)
+    end
+
+    def fetch keyweord
+      # Add some headers to trick Yahoo! into believing we're not a bot
+      res = HTTP
+        .headers(:accept_language => "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4")
+        .headers(:user_agent => "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36")
+        .headers(:accept => "text/html")
+        .headers(:referer => "https://fr.search.yahoo.com/")
+        .headers(:authority => "fr.search.yahoo.com")
+        .get("https://fr.search.yahoo.com/search?p=#{@keyword.keyword}")
+      if res.code == 200
+        @keyword.cache = res.to_s
+        @keyword.processed_at = Time.now.strftime("%FT%T%z")
+      end
     end
 end
