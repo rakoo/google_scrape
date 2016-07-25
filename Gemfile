@@ -27,7 +27,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# For http requests
 gem 'http'
+
+# For parsing HTML
+gem 'oga'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -86,6 +86,29 @@ class KeywordsController < ApplicationController
         .get("https://fr.search.yahoo.com/search?p=#{@keyword.keyword}")
       if res.code == 200
         @keyword.cache = res.to_s
+        d = Oga.parse_html(res.to_s)
+
+        # ads on top
+        d.css('div#main div ol li div div div h3 a').each do |ad|
+          link = ad.attributes.select {|a| a.name == "href"}.first.value
+          @keyword.urls.build(url: link, isTopAd: true)
+        end
+
+        # ads on the right
+        d.css('div#right div ol div div div h3 a').each do |ad|
+          link = ad.attributes.select {|a| a.name == "href"}.first.value
+          @keyword.urls.build(url: link, isRightAd: true)
+        end
+
+
+        # non-ad links
+        d.css('div#web ol li div div h3 a').each do |ad|
+          link = ad.attributes.select {|a| a.name == "href"}.first.value
+          @keyword.urls.build(url: link)
+        end
+
+        # total results
+        @keyword.total_results = d.css('div#left div ol li div div span').last.children.first.text.gsub(/[^\d]/, '').to_i
         @keyword.processed_at = Time.now.strftime("%FT%T%z")
       end
     end
