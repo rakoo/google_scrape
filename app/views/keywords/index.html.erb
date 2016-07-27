@@ -31,12 +31,9 @@
         <td><%= keyword.total_results %></td>
         <td><%= keyword.search_time %></td>
         <td><%= link_to 'Show', keyword %></td>
-        <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Keyword', new_keyword_path %>
