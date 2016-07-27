@@ -29,6 +29,10 @@ class ReportsController < ApplicationController
       k = @report.keywords.build(keyword: keyword)
       search_and_fill(k)
     end
+    if @report.keywords.empty?
+      render :new
+      return
+    end
 
     respond_to do |format|
       if @report.save
