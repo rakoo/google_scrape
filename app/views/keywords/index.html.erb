@@ -19,7 +19,7 @@
   </thead>
 
   <tbody>
-    <% @keywords.each do |keyword| %>
+    <% @keywords.sort_by{|k| k.keyword}.each do |keyword| %>
       <tr>
         <td><%= keyword.keyword %></td>
         <td><%= keyword.urls.select{|u| u.isTopAd}.size %></td>
