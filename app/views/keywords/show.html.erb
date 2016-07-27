@@ -32,7 +32,7 @@
 
 <p>
   <strong>Search time:</strong>
-  <%= @keyword.search_time %>
+  <%= @keyword.search_time || "unknown" %>
 </p>
 
 <%= link_to 'Back', :back %>
