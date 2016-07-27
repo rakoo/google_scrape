@@ -16,5 +16,5 @@ Commands taken from https://wiki.archlinux.org/index.php/PostgreSQL
 * Grant privileges (https://www.postgresql.org/docs/9.0/static/sql-grant.html)
 
   postgres$ psql google_scrape_dev
-  google_scrape_dev=# GRANT ALL PRIVILEGES ON schema_migrations,keywords,urls TO google_scrape; 
-  google_scrape_dev=# GRANT ALL ON SEQUENCE keywords_id_seq,urls_id_seq TO google_scrape;
+  google_scrape_dev=# GRANT ALL PRIVILEGES ON reports,schema_migrations,keywords,urls TO google_scrape; 
+  google_scrape_dev=# GRANT ALL ON SEQUENCE reports_id_seq,keywords_id_seq,urls_id_seq TO google_scrape;

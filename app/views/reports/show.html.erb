@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Created at</strong>
+  <%= @report.created_at %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Top Ads</th>
+      <th>Right Ads</th>
+      <th>Non Ads</th>
+      <th>Total links</th>
+      <th>Cache</th>
+      <th>Processed at</th>
+      <th>Total results</th>
+      <th>Search time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @keywords.sort_by{|k| k.keyword}.each do |keyword| %>
+      <tr>
+        <td><%= keyword.keyword %></td>
+        <td><%= keyword.urls.select{|u| u.isTopAd}.size %></td>
+        <td><%= keyword.urls.select{|u| u.isRightAd}.size %></td>
+        <td><%= keyword.urls.reject{|u| u.isRightAd || u.isTopAd}.size %></td>
+        <td><%= keyword.urls.size %></td>
+        <td><%= keyword.cache.size %> characters</td>
+        <td><%= keyword.processed_at %></td>
+        <td><%= keyword.total_results %></td>
+        <td><%= keyword.search_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Back', reports_path %>

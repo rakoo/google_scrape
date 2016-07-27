@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :keywords do
-    resources :urls
-  end
-  resources :urls
-  root 'keywords#index'
+  resources :reports
+  root 'reports#index'
 end
