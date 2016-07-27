@@ -12,9 +12,8 @@
   <% end %>
 
   <div class="field">
-    Keywords to search for (one by line)
-    <%= f.label :keywords %>
-    <%= f.text_area :keywords %>
+    <%= f.label :keywords, "Keywords to search for (one by line)" %>
+    <%= f.text_area :keywords, value: "", size: "60x12" %>
   </div>
 
   <div class="actions">
