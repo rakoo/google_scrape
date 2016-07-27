@@ -1,5 +1,5 @@
 class KeywordsController < ApplicationController
-  before_action :set_keyword, only: [:show]
+  before_action :set_keyword, only: [:show, :cache]
 
   # GET /keywords
   # GET /keywords.json
@@ -10,6 +10,11 @@ class KeywordsController < ApplicationController
   # GET /keywords/1
   # GET /keywords/1.json
   def show
+  end
+
+  # GET /keywords/1/cache
+  def cache
+    render text: @keyword.cache
   end
 
   # GET /keywords/new

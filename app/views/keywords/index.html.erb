@@ -26,7 +26,7 @@
         <td><%= keyword.urls.select{|u| u.isRightAd}.size %></td>
         <td><%= keyword.urls.reject{|u| u.isRightAd || u.isTopAd}.size %></td>
         <td><%= keyword.urls.size %></td>
-        <td><%= keyword.cache.size %> characters</td>
+        <td><%= link_to "#{keyword.cache.size} characters", controller: :keywords, action: :cache, id: keyword.id %></td>
         <td><%= keyword.processed_at %></td>
         <td><%= keyword.total_results %></td>
         <td><%= keyword.search_time %></td>

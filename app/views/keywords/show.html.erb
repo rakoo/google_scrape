@@ -17,7 +17,7 @@
 
 <p>
   <strong>Cache:</strong>
-  <%= @keyword.cache.size %> characters
+  <%= link_to "#{@keyword.cache.size} characters", controller: :keywords, action: :cache, id: @keyword.id %>
 </p>
 
 <p>
